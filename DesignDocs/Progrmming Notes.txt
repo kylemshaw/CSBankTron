@@ -1,0 +1,7 @@
+BankTron Documentation
+
+Setting up the DB
+- Download NuGet packages
+- Run scaffolding command
+**lab3**
+Scaffold-DbContext -Connection "Data Source=localhost\sqlexpress;Initial Catalog=BankTron;Integrated Security=True" -Provider Microsoft.EntityFrameworkCore.SqlServer -Context DBContext -OutputDir Models -DataAnnotations -Force
