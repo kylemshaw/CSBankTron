@@ -42,6 +42,7 @@ namespace BankTron_WinFormsUI
             // 
             // dgvImportData
             // 
+            this.dgvImportData.AllowUserToAddRows = false;
             this.dgvImportData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvImportData.Location = new System.Drawing.Point(21, 105);
             this.dgvImportData.Name = "dgvImportData";

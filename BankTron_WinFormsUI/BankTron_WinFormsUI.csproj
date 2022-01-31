@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BankTronBusinessLogic\BankTronBusinessLogic.csproj" />
-    <ProjectReference Include="..\BankTronData\BankTronData.csproj" />
   </ItemGroup>
 
 </Project>

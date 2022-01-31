@@ -5,3 +5,6 @@ Setting up the DB
 - Run scaffolding command
 **lab3**
 Scaffold-DbContext -Connection "Data Source=localhost\sqlexpress;Initial Catalog=BankTron;Integrated Security=True" -Provider Microsoft.EntityFrameworkCore.SqlServer -Context DBContext -OutputDir Models -DataAnnotations -Force
+
+Adding SQLite to the Project
+https://www.youtube.com/watch?v=ayp3tHEkRc0&ab_channel=IAmTimCorey

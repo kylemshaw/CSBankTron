@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31410.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankTronData", "BankTronData\BankTronData.csproj", "{D66BBB0D-1F68-4EC3-96B1-C199D31CA437}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankTronBusinessLogic", "BankTronBusinessLogic\BankTronBusinessLogic.csproj", "{DEFC0AA4-9E14-4A96-82EF-E4905FE4B385}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankTronBusinessLogic", "BankTronBusinessLogic\BankTronBusinessLogic.csproj", "{DEFC0AA4-9E14-4A96-82EF-E4905FE4B385}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankTron_WinFormsUI", "BankTron_WinFormsUI\BankTron_WinFormsUI.csproj", "{475AD68B-64A2-4D12-9D5B-A4D2D8B9B4A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankTron_WinFormsUI", "BankTron_WinFormsUI\BankTron_WinFormsUI.csproj", "{475AD68B-64A2-4D12-9D5B-A4D2D8B9B4A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankTronSQLiteData", "BankTronSQLiteData\BankTronSQLiteData.csproj", "{A1E3BFD2-CD73-4306-BDC9-4F526F28BB29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D66BBB0D-1F68-4EC3-96B1-C199D31CA437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D66BBB0D-1F68-4EC3-96B1-C199D31CA437}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D66BBB0D-1F68-4EC3-96B1-C199D31CA437}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D66BBB0D-1F68-4EC3-96B1-C199D31CA437}.Release|Any CPU.Build.0 = Release|Any CPU
 		{DEFC0AA4-9E14-4A96-82EF-E4905FE4B385}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DEFC0AA4-9E14-4A96-82EF-E4905FE4B385}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DEFC0AA4-9E14-4A96-82EF-E4905FE4B385}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{475AD68B-64A2-4D12-9D5B-A4D2D8B9B4A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{475AD68B-64A2-4D12-9D5B-A4D2D8B9B4A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{475AD68B-64A2-4D12-9D5B-A4D2D8B9B4A0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1E3BFD2-CD73-4306-BDC9-4F526F28BB29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1E3BFD2-CD73-4306-BDC9-4F526F28BB29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1E3BFD2-CD73-4306-BDC9-4F526F28BB29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1E3BFD2-CD73-4306-BDC9-4F526F28BB29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

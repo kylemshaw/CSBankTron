@@ -18,8 +18,8 @@ namespace BankTronBusinessLogic
             for (int i = 0; i < transactionList[0].Length; i++)
             {
                 StringBuilder colHeader = new StringBuilder(transactionList[0].ElementAt(i));
-                colHeader.Remove(0, 1);
-                colHeader.Remove(colHeader.Length - 1, 1);
+                //colHeader.Remove(0, 1);
+                //colHeader.Remove(colHeader.Length - 1, 1);
                 dtRawTransactions.Columns.Add(colHeader.ToString());
             }
             transactionList.RemoveAt(0);
