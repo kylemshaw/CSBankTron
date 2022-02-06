@@ -37,6 +37,7 @@ namespace BankTron_WinFormsUI
             this.txtFilePath = new System.Windows.Forms.TextBox();
             this.lblFile = new System.Windows.Forms.Label();
             this.cboBank = new System.Windows.Forms.ComboBox();
+            this.btnAddNewCategory = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvImportData)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,7 +56,7 @@ namespace BankTron_WinFormsUI
             this.btnImport.Location = new System.Drawing.Point(632, 541);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(75, 23);
-            this.btnImport.TabIndex = 1;
+            this.btnImport.TabIndex = 4;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
@@ -65,7 +66,7 @@ namespace BankTron_WinFormsUI
             this.btnCancel.Location = new System.Drawing.Point(713, 541);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 2;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -84,7 +85,7 @@ namespace BankTron_WinFormsUI
             this.btnBrowse.Location = new System.Drawing.Point(713, 62);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
-            this.btnBrowse.TabIndex = 5;
+            this.btnBrowse.TabIndex = 2;
             this.btnBrowse.Text = "Browse...";
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
@@ -95,7 +96,7 @@ namespace BankTron_WinFormsUI
             this.txtFilePath.Location = new System.Drawing.Point(77, 62);
             this.txtFilePath.Name = "txtFilePath";
             this.txtFilePath.Size = new System.Drawing.Size(630, 23);
-            this.txtFilePath.TabIndex = 6;
+            this.txtFilePath.TabIndex = 3;
             // 
             // lblFile
             // 
@@ -108,17 +109,29 @@ namespace BankTron_WinFormsUI
             // 
             // cboBank
             // 
+            this.cboBank.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBank.FormattingEnabled = true;
             this.cboBank.Location = new System.Drawing.Point(77, 31);
             this.cboBank.Name = "cboBank";
             this.cboBank.Size = new System.Drawing.Size(158, 23);
-            this.cboBank.TabIndex = 8;
+            this.cboBank.TabIndex = 1;
+            // 
+            // btnAddNewCategory
+            // 
+            this.btnAddNewCategory.Location = new System.Drawing.Point(21, 541);
+            this.btnAddNewCategory.Name = "btnAddNewCategory";
+            this.btnAddNewCategory.Size = new System.Drawing.Size(108, 23);
+            this.btnAddNewCategory.TabIndex = 6;
+            this.btnAddNewCategory.Text = "New Category...";
+            this.btnAddNewCategory.UseVisualStyleBackColor = true;
+            this.btnAddNewCategory.Click += new System.EventHandler(this.btnAddNewCategory_Click);
             // 
             // frmImport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 576);
+            this.Controls.Add(this.btnAddNewCategory);
             this.Controls.Add(this.cboBank);
             this.Controls.Add(this.lblFile);
             this.Controls.Add(this.txtFilePath);
@@ -146,5 +159,6 @@ namespace BankTron_WinFormsUI
         private System.Windows.Forms.TextBox txtFilePath;
         private System.Windows.Forms.Label lblFile;
         private System.Windows.Forms.ComboBox cboBank;
+        private System.Windows.Forms.Button btnAddNewCategory;
     }
 }

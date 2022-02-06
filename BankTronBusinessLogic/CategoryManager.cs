@@ -1,6 +1,5 @@
 ﻿using BankTronSQLiteData;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Linq;
 
@@ -18,10 +17,24 @@ namespace BankTronBusinessLogic
             }
         }
 
-        public static List<string> GetAllTest()
-        {           
-            List<string> categories = new List<string>{ "Rent", "Utilities", "Bills", "Transport" };
-            return categories;
+        public static void Add(Category c)
+        {
+            using (BankTronContext db = new BankTronContext())
+            {
+                db.Categories.Add(c);
+                db.SaveChanges();
+            }
         }
+
+        public static Category FindByName(string name)
+        {
+            using (BankTronContext db = new BankTronContext())
+            {
+                Category category = db.Categories.FirstOrDefault<Category>(c => c.Name.ToLower().Equals(name.ToLower()));
+                return category;
+            }
+        }
+
+
     }
 }
