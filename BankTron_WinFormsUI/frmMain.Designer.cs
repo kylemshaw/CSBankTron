@@ -30,6 +30,7 @@ namespace BankTron_WinFormsUI
         private void InitializeComponent()
         {
             this.btnImport = new System.Windows.Forms.Button();
+            this.btnCreateBudget = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnImport
@@ -42,11 +43,22 @@ namespace BankTron_WinFormsUI
             this.btnImport.UseVisualStyleBackColor = true;
             this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
+            // btnCreateBudget
+            // 
+            this.btnCreateBudget.Location = new System.Drawing.Point(361, 121);
+            this.btnCreateBudget.Name = "btnCreateBudget";
+            this.btnCreateBudget.Size = new System.Drawing.Size(102, 58);
+            this.btnCreateBudget.TabIndex = 1;
+            this.btnCreateBudget.Text = "Create Budget";
+            this.btnCreateBudget.UseVisualStyleBackColor = true;
+            this.btnCreateBudget.Click += new System.EventHandler(this.btnCreateBudget_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnCreateBudget);
             this.Controls.Add(this.btnImport);
             this.Name = "frmMain";
             this.Text = "frmMain";
@@ -58,5 +70,6 @@ namespace BankTron_WinFormsUI
         #endregion
 
         private System.Windows.Forms.Button btnImport;
+        private System.Windows.Forms.Button btnCreateBudget;
     }
 }

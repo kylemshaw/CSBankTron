@@ -10,12 +10,13 @@ namespace BankTronSQLiteData
        
         public string Name { get; set; }
        
-        public double? WeightInBudget { get; set; }
+        public decimal WeightInBudget { get; set; }
 
+        //Foreign Key
         public int BudgetID { get; set; }
         public Budget Budget { get; set; }
 
-        public ICollection<BudgetItem> BudgetItems { get; set; }      
-
+        public ICollection<BudgetItem> BudgetItems { get; set; }
+       
     }
 }

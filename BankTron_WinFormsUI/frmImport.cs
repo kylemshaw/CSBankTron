@@ -11,8 +11,7 @@ namespace BankTron_WinFormsUI
     {
         public frmImport()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
         }
 
         private void frmImport_Load(object sender, EventArgs e)

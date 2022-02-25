@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BankTronSQLiteData;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,19 @@ namespace BankTron_WinFormsUI
             if(result == DialogResult.OK)
             {
                 //notify import was success
+            }
+        }
+
+        private void btnCreateBudget_Click(object sender, EventArgs e)
+        {
+            frmAddEditBudget budgetForm = new frmAddEditBudget();
+            budgetForm.IsAdd = true;
+            budgetForm.Budget = new Budget();
+
+            DialogResult result = budgetForm.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                //notify of success
             }
         }
     }

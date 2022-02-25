@@ -39,10 +39,10 @@ namespace BankTronSQLiteData
             );
 
             modelBuilder.Entity<BudgetGroup>().HasData(
-                new BudgetGroup { ID = 1, BudgetID = 1, Name = "Fixed Costs", WeightInBudget = 0.50d },
-                new BudgetGroup { ID = 2, BudgetID = 1, Name = "Investments", WeightInBudget = 0.20d },
-                new BudgetGroup { ID = 3, BudgetID = 1, Name = "Savings", WeightInBudget = 0.20d },
-                new BudgetGroup { ID = 4, BudgetID = 1, Name = "Guilt Free", WeightInBudget = 0.10d }
+                new BudgetGroup { ID = 1, BudgetID = 1, Name = "Fixed Costs", WeightInBudget = 0.50m },
+                new BudgetGroup { ID = 2, BudgetID = 1, Name = "Investments", WeightInBudget = 0.20m },
+                new BudgetGroup { ID = 3, BudgetID = 1, Name = "Savings", WeightInBudget = 0.20m },
+                new BudgetGroup { ID = 4, BudgetID = 1, Name = "Guilt Free", WeightInBudget = 0.10m }
             );            
 
             modelBuilder.Entity<Category>().HasData(

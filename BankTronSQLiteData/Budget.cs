@@ -10,7 +10,7 @@ namespace BankTronSQLiteData
         
         public string Name { get; set; }
         
-        public decimal? Value { get; set; }       
+        public decimal Value { get; set; }       
                 
         public ICollection<BudgetGroup> BudgetGroups { get; set; }
 
