@@ -32,19 +32,19 @@ namespace BankTron_WinFormsUI.CustomControls
         private void BudgetGroupDisplay_Load(object sender, EventArgs e) 
         {
             lblGroupName.Text = group.Name;                        
-            txtWeight.Text = (group.WeightInBudget * 100.0m).ToString();
-            lblGroupValue.Text = (group.WeightInBudget * budgetValue).ToString("c");
+            lblWeight.Text = (group.WeightInBudget).ToString("P1");
+            lblGroupValue.Text = (group.WeightInBudget * budgetValue).ToString("C");
             ValidateGroupWeight();
             UpdateDataGrid();
         }
 
-        private void txtWeight_TextChanged(object sender, EventArgs e)
+        private void lblWeight_TextChanged(object sender, EventArgs e)
         {
             decimal weight;
-            if (Decimal.TryParse(txtWeight.Text, out weight))
+            if (Decimal.TryParse(lblWeight.Text, out weight))
             {                
                 group.WeightInBudget = weight / 100.0m;
-                lblGroupValue.Text = (group.WeightInBudget * budgetValue).ToString("c");
+                lblGroupValue.Text = (group.WeightInBudget * budgetValue).ToString("C");
                 ValidateGroupWeight();                
             }
         }
@@ -82,28 +82,28 @@ namespace BankTron_WinFormsUI.CustomControls
             }
 
             // Proivde user difference between group goal and actual amount allocated
-            lblBalance.Text = ((budgetValue * group.WeightInBudget) - groupGoalSum).ToString("c");
+            lblBalance.Text = ((budgetValue * group.WeightInBudget) - groupGoalSum).ToString("C");
 
             // Apply validation rules
             if (groupGoalSum > Decimal.Parse(lblGroupValue.Text.Substring(1)))
             {
-                txtWeight.BackColor = Color.LightPink;
+                lblWeight.ForeColor = Color.Red;
                 lblGroupValue.ForeColor = Color.Red;
                 lblBalance.ForeColor = Color.Red;
                 this.isValid = false;
             }
             else if (groupGoalSum < Decimal.Parse(lblGroupValue.Text.Substring(1)))
             {                
-                txtWeight.BackColor = Color.LightBlue;
-                lblGroupValue.ForeColor = Color.Green;
-                lblBalance.ForeColor = Color.Green;
+                lblWeight.ForeColor = Color.YellowGreen;
+                lblGroupValue.ForeColor = Color.YellowGreen;
+                lblBalance.ForeColor = Color.Silver;
                 this.isValid = true;
             }
             else
-            {                
-                txtWeight.BackColor = Color.LightBlue;
-                lblGroupValue.ForeColor = Color.Black;
-                lblBalance.ForeColor = Color.Black;
+            {
+                lblWeight.ForeColor = Color.Silver;
+                lblGroupValue.ForeColor = Color.Silver;
+                lblBalance.ForeColor = Color.Silver;
                 this.isValid = true;
             }
         }
@@ -115,15 +115,17 @@ namespace BankTron_WinFormsUI.CustomControls
 
             // Category Name
             dgvBudgetItems.Columns[0].HeaderText = "Category";
-            dgvBudgetItems.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dgvBudgetItems.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            //dgvBudgetItems.Columns[0].HeaderCell.Style.BackColor = Color.Red;
+            //dgvBudgetItems.Columns[0].HeaderCell.Style.ForeColor = Color.Black;
             dgvBudgetItems.Columns[0].Width = 175;
-            dgvBudgetItems.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dgvBudgetItems.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
 
             // Category Goal Amount
             dgvBudgetItems.Columns[1].HeaderText = "Value";
-            dgvBudgetItems.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgvBudgetItems.Columns[1].Width = 70;
-            dgvBudgetItems.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleRight;
+            //dgvBudgetItems.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvBudgetItems.Columns[1].Width = 125;
+            dgvBudgetItems.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             dgvBudgetItems.Columns[1].DefaultCellStyle.Format = "c";                       
         }
 
@@ -146,6 +148,6 @@ namespace BankTron_WinFormsUI.CustomControls
 
         }
 
-
+        
     }
 }

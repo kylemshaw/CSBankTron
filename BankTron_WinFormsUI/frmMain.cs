@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace BankTron_WinFormsUI
@@ -14,6 +16,12 @@ namespace BankTron_WinFormsUI
         public frmMain()
         {
             InitializeComponent();
+
+            // Set "C" string formatter to display negative values like: -$0.00
+            CultureInfo currentCulture = Thread.CurrentThread.CurrentCulture;
+            CultureInfo newCulture = new CultureInfo(currentCulture.Name);
+            newCulture.NumberFormat.CurrencyNegativePattern = 1;
+            Thread.CurrentThread.CurrentCulture = newCulture;
         }
 
         private void frmMain_Load(object sender, EventArgs e)
