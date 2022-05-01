@@ -19,6 +19,7 @@ namespace BankTron_WinFormsUI
             cboBank.Items.Add("RBC");
             cboBank.SelectedItem = "RBC";
 
+
             btnAddNewCategory.Enabled = false;
         }
 
@@ -43,13 +44,9 @@ namespace BankTron_WinFormsUI
 
                 try
                 {
-                    switch (cboBank.SelectedItem)
-                    {
-                        case "RBC":
-                        default:
-                            dgvImportData.DataSource = ImportCSV.GetRBCTransactions(openFileDialog.FileName);
-                            break;
-                    }        
+                    Bank selectedBank = Bank.MakeBank(cboBank.SelectedItem.ToString());
+                    ImportTransactionsDelegate importTransactions = selectedBank.importFromCSV;
+                    dgvImportData.DataSource = importTransactions(openFileDialog.FileName);                    
                 
                     DataGridViewComboBoxColumn categoryColumn = new DataGridViewComboBoxColumn();
                     categoryColumn.DataSource = CategoryManager.GetAll();

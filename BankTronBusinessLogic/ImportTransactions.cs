@@ -7,9 +7,28 @@ using System.Text;
 
 namespace BankTronBusinessLogic
 {
-    public static class ImportCSV
+    public delegate DataTable ImportTransactionsDelegate(string filePath);
+
+    public abstract class Bank
     {
-        public static DataTable GetRBCTransactions(String filePath)
+        public abstract DataTable importFromCSV(string filePath);
+
+        public static Bank MakeBank(string bank)
+        {
+            switch (bank)
+            {
+                case "RBC":
+                    return new RBCBank();
+               
+                default:
+                    return null;
+            }
+        }
+    }
+
+    public class RBCBank : Bank
+    {
+        public override DataTable importFromCSV(string filePath)
         {
             DataTable dtRawTransactions = new DataTable();
             List<string[]> transactionList = File.ReadAllLines(filePath).Select(x => x.Split(',')).ToList();
@@ -33,7 +52,6 @@ namespace BankTronBusinessLogic
                 dtRawTransactions.Rows.Add(dr);
             });
 
-
             DataTable dtProcessedTransactions = new DataTable();
             dtProcessedTransactions.Columns.Add("Account Type");
             dtProcessedTransactions.Columns.Add("Account Number");
@@ -56,4 +74,5 @@ namespace BankTronBusinessLogic
 
         }
     }
+
 }
